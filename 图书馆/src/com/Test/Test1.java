@@ -14,7 +14,7 @@ public class Test1 {
         books=new Book[l1.getSize()];
         for (int i=0;i<l1.getSize();i++){
             //将新new的booki对象加入数组中；
-            books[i]=new Book(getAbook(i+1));
+            books[i]=new Book(Library.getAbook(i+1));
         }
         l1.setBooks(books);
         //String s=l1.toString();
@@ -34,7 +34,7 @@ public class Test1 {
                     }
                     break;
                 case 2:
-                    Book abook=getAbook(size+1);
+                    Book abook=Library.getAbook(size+1);
                     if (l1.add(abook)){
                         System.out.println("增加成功");
                     }else{
@@ -53,7 +53,7 @@ public class Test1 {
                     System.out.println(l1);
                     break;
                 case 4:
-                    Book bbook=getAbook(size+1);
+                    Book bbook=Library.getAbook(size+1);
                     System.out.println("输入需要修改的书号");
                     String id2 = sc2.nextLine();
                     if(l1.change(id2,bbook)){
@@ -67,18 +67,5 @@ public class Test1 {
             q=sc1.nextInt();
         }
     }
-    public static Book getAbook(int i){
-        Scanner sc1=new Scanner(System.in);
-        Book booki;
-        System.out.println("输入书的信息");
-        System.out.print("书籍编号：");
-        String id=sc1.nextLine();
-        System.out.print("书名：");
-        String bookname=sc1.nextLine();
-        System.out.print("作者：");
-        String author=sc1.nextLine();
-        booki=new Book(id,bookname,author);
-        return booki;
 
-    }
 }

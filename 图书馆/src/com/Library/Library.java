@@ -1,5 +1,7 @@
 package com.Library;
 
+import java.util.Scanner;
+
 public class Library {
     private int size;
     static int maxsize=100;
@@ -91,6 +93,20 @@ public class Library {
             this.books[flag]=new Book(new String(abook.getNumber()),new String(abook.getBookname()),new String(abook.getAuthor()));
             return true;
         }
+    }
+    public static Book getAbook(int i){
+        Scanner sc1=new Scanner(System.in);
+        Book booki;
+        System.out.println("输入书的信息");
+        System.out.print("书籍编号：");
+        String id=sc1.nextLine();
+        System.out.print("书名：");
+        String bookname=sc1.nextLine();
+        System.out.print("作者：");
+        String author=sc1.nextLine();
+        booki=new Book(id,bookname,author);
+        return booki;
+
     }
 
 }
